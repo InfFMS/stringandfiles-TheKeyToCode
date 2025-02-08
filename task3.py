@@ -6,3 +6,16 @@
 # слово2: количество
 #
 # Убедитесь, что слова записаны в алфавитном порядке.
+import re
+with open('task2.txt', encoding='utf-8') as f:
+    text = f.read()
+print(text)
+words = list(re.split(r'[ \n,?!.]', text))
+words.sort()
+print(words)
+
+words = list(set(words))
+print(words)
+if len(words) > 0 and words[0]=='':
+    words.pop(0)
+print(len(words))
