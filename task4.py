@@ -9,8 +9,12 @@ n = int(input("Введиет количество строк, что будет
 text = ''
 for i in range(n):
     current_string = input()
-    current_string.upper()
-    current_string.replace(' ','-')
+    current_string = current_string.upper()
+    current_string = current_string.replace(' ','_')
     text+=current_string + "\n"
-with open('task4.txt', "w+", encoding='utf-8') as f:
+with open('task4.txt', "+w") as f:
     f.write(text)
+with open('task4.txt', "r") as f:
+    content = f.read()
+    print(content)
+
